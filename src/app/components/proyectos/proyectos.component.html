@@ -1,0 +1,158 @@
+
+        <section class="proyes container-fluid p-4 cont100">
+            <div class="proyesText pt-4 mt-4"><h1 class="text-md-start text-center">Proyectos</h1></div>
+                <div class="proyectos pt-md-4 mt-md-4">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner d-flex align-items-center cinner">
+                            <div 
+                            (click)="openM_0()"
+                            class="carousel-item active myborder" 
+                            id="myInput_0">
+                                <div class="mixblend d-flex align-items-center">
+                                    <img src="https://github.com/milasantacruz/portfolio-front-estatico/blob/fe1c4046dfc7a74f899cfc399a5dd3be7eb9712c/images/ns-w.PNG?raw=true" class="myInputs d-block w-100" alt="...">
+                                    <h1 class="cap">Naurosynchhealth.com</h1>
+                                </div>
+                            </div>
+                            <div 
+                            (click)="openM_1()"
+                            class="carousel-item myborder" 
+                            id="myInput_1">
+                                <div class="mixblend d-flex align-items-center">
+                                    <img src="https://github.com/milasantacruz/portfolio-front-estatico/blob/fe1c4046dfc7a74f899cfc399a5dd3be7eb9712c/images/fr.PNG?raw=true" class="myInputs d-block w-100" alt="...">
+                                </div>
+                                <h1 class="cap">Freaknoizestudio.com</h1>
+                            </div>
+                            <div 
+                            (click)="openM_2()"
+                            class="carousel-item myborder"
+                            id="myInput_2">
+                                <div class="mixblend d-flex align-items-center">
+                                    <img src="https://github.com/milasantacruz/portfolio-front-estatico/blob/fe1c4046dfc7a74f899cfc399a5dd3be7eb9712c/images/flor_web.PNG?raw=true" class="myInputs d-block w-100" alt="...">
+                                </div>
+                                <h1 class="cap">Florenciamuriel.com</h1>
+                            </div>
+                            <div 
+                            (click)="openM_3()"
+                            class="carousel-item myborder" 
+                            id="myInput_3">
+                                <div class="mixblend d-flex align-items-center">
+                                    <img src="https://github.com/milasantacruz/portfolio-front-estatico/blob/fe1c4046dfc7a74f899cfc399a5dd3be7eb9712c/images/it.PNG?raw=true" class="myInputs d-block w-100" alt="...">
+                                </div>
+                                <h1 class="cap">Intercambiotransorganicos.org</h1>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+
+            <!-- //MODALS -->
+
+            <div class="modal" id="myModal_0" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-color-rose">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Neurosynch</h5>
+                    <button 
+                    (click)="closeM_0()"
+                    type="button" 
+                    class="btn-close" 
+                    data-bs-dismiss="modal" 
+                    aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <h3>2021</h3>
+                            <p>Diseno y desarrollo de la landing del proyecto. El Frontend fue realizado con Htlml, Javascript y Bulma-css. Tambien se implemento una base de datos de firebase para la recoleccion de Emails y subscripcion</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="color-red" href="https://neurosynch.netlify.app">Go to Page</a>
+                        
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div 
+            (click)="closeM_1()"
+            class="modal" 
+            id="myModal_1" 
+            tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-color-rose">
+                    <div class="modal-header">
+                    <h5 class="modal-title">FreakNoize Studio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <h3>2021</h3>
+                            <p>Diseno y desarrollo de la Web del Estudio. El Frontend fue realizado con React/Gatsby , Bulma-css y desplegado en Netlify. Tambien se implemento un Headless CMS de Strapi con postgress y Heroku</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="color-red" href="https://freaknoizestudio.netlify.app">Go to Page</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div 
+            (click)="closeM_2()"
+            class="modal" id="myModal_2" 
+            tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-color-rose">
+                    <div class="modal-header">
+                    <h5 class="modal-title">FlorenciaMuriel.com</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <h3>2021</h3>
+                            <p>Diseno y desarrollo del portfolio de Florencia Muriel, animadora 2D. El Frontend fue realizado con React/Gatsby , Bulma-css y desplegado en Netlify. Tambien se implemento un Headless CMS de Strapi con postgress y Heroku</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="color-red" href="https://florenciamuriel.com">Go to Page</a>    
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div 
+            (click)="closeM_3()"
+            class="modal" 
+            id="myModal_3" 
+            tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-color-rose">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Intercambios Transorganicos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="">
+                            <h3>2021</h3>
+                            <p>Diseno y desarrollo de la web del proyecto. El Frontend fue realizado con React/Gatsby , Bulma-css y desplegado en Netlify. Tambien se implemento un Headless CMS de Strapi con SQLite y Docker</p>
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="color-red" href="https://intercambiostransorganicos.org">Go to Page</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+
+
+        </section>

@@ -1,0 +1,59 @@
+<section class="row persona cont100 d-md-flex align-items-end">
+    <!-- <lottie-player class="lottie" src="https://assets7.lottiefiles.com/packages/lf20_wToGI28NVx.json"  background="transparent"  speed="1"  style="width: 100%; height:111%" autoplay></lottie-player>
+    <lottie-player class="lottie_mobile" src="https://assets2.lottiefiles.com/packages/lf20_FMPjGDqepZ.json"  background="transparent"  speed="1"  style="width: 100%; height:114%" autoplay></lottie-player> -->
+    <ng-lottie
+        class="lottie"
+        [options]="options" 
+        (animationCreated)="onAnimate($event)">
+    </ng-lottie>
+    <div class="compoPersona d-flex pb-4 mb-4">
+
+         <div class="col-md-2">
+             <img [src]="usuarioDataModel.imagen_perfil" alt="" class="mt-4 personaImg img-thumbnail bg-color-rose rounded-circle">
+         </div>
+         <div class="col-6 d-flex personaText align-items-center">
+                 
+                 <blockquote class=" blockquote p-4">
+                     <h1 id="titulo">{{usuarioDataModel.ocupacion}}</h1>
+                     <footer id="nombre" class="blockquote-footer">{{usuarioDataModel.nombre}}</footer>
+                    <!-- FORM PERSONA /////////////////////// -->
+                     
+                     <form 
+                     [ngStyle]="{'display':(editUsuario)?'block':'none'}" 
+                     id="formPersona" 
+                     class="border border-danger rounded bg-color-rose p-2 m-2">
+                        <mat-form-field class="form-group row d-block">
+                            <mat-label for="tituloInput" class="full-width col-sm-2 col-form-label">Titulo</mat-label>
+                            <div class="col-sm-10">
+                            <input matInput [(ngModel)]="usuarioDataModel.ocupacion" required type="text" name="tituloInput" id="tituloInput"  placeholder="..." class="form-control">
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="d-block form-group row">
+                            <mat-label for="nombreInput" class="full-width col-sm-2 col-form-label">Nombre</mat-label>
+                            <div class="col-sm-10">
+                            <input matInput [(ngModel)]="usuarioDataModel.nombre" required type="text" name="nombreInput" id="nombreInput"  placeholder="..." class="form-control">
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="d-block form-group row">
+                            <mat-label for="imagenInput" class="full-width col-sm-2 col-form-label">Imagen</mat-label>
+                            <div class="col-sm-10">
+                            <input matInput [(ngModel)]="usuarioDataModel.imagen_perfil" required type="text" name="imagenInput" id="imagenInput"  placeholder="..." class="form-control">
+                            </div>
+                        </mat-form-field>
+                        <button (click)="closeEdit()" id="cancelarPersona" class="btn bg-color-red">cancelar</button>
+                        <button (click)="editForm()" id="confirmarPersona" class="btn bg-color-red">confirmar</button>
+                    </form>
+                    <!-- //////////////////////////////////// -->
+                 </blockquote>
+                 <div 
+                 (click)="clickEdit()"
+                 [ngStyle]="{'display':(isLogIn)?'block':'none'}" 
+                 class="my-pe p-4" 
+                 id="editarPersona">
+                     <i class="bi bi-pencil-square fa-4x"></i>
+                 </div>
+                
+         </div>
+         
+    </div>
+ </section>

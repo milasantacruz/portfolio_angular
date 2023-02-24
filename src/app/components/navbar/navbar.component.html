@@ -1,0 +1,118 @@
+        <!-- NAVBAR -->
+        <nav class=" navbar fixed-top navbar-expand-lg bg-light">
+            <div class="container-fluid">
+
+                <div class="navbar-brand d-md-flex m-md-2 m-0">
+                    <a href="#" class="color-green d-flex ">Argentina Programa</a>
+                    <a href="#" class="color-red d-flex ">#YoProgramo</a>
+                </div>
+            
+                <div class="group-icons d-flex pr-4">
+                    <div class="p-md-3 p-1"><i class="bi bi-github"></i></div>
+                    <div class="p-md-3 p-1"><i class="bi bi-linkedin"></i></div>
+                    <button 
+                    [ngStyle]="{'display':(isLogIn)?'none':'block'}"
+                    type="button" 
+                    (click)='openModalS()'
+                    class="bg-color-red btn btn-dark">
+                    Signup
+                    </button>
+                    <button 
+                    [ngStyle]="{'display':(isLogIn)?'none':'block'}"
+                    (click)='openModalL()' 
+                    type="button" 
+                    class="bg-color-red btn btn-dark">
+                    <i class="bi bi-door-closed-fill"></i>
+                    Login
+                  </button>
+                  <button 
+                    [ngStyle]="{'display':(isLogIn)?'block':'none'}"
+                    (click)='logOut()' 
+                    type="button" 
+                    class="bg-color-red btn btn-dark">
+                    <i class="bi bi-door-closed-fill"></i>
+                    Logout
+                  </button>
+                </div>
+            
+            </div>
+        </nav> 
+        <!-- Modal Login -->
+        <div class="modal fase" id="loginModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Login</h5>
+                  <button  (click)="closeModalL()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    
+                  <form class="loginform" (ngSubmit)="formSubmitL()" >
+
+                      <mat-form-field appearance="outline" class="form-group">
+                        <mat-label class="full-width" for="email_L">Email</mat-label>
+                        <input matInput [(ngModel)] = 'loginData.email' name="email_L" id="email_L" required type="email" class="form-control" placeholder="Ingrese el email del Usuario">
+                        <mat-hint>El Email es requerido</mat-hint>
+                      </mat-form-field>
+    
+                      <mat-form-field appearance="outline" class="form-group">
+                        <mat-label class="full-width" for="password_L">password</mat-label>
+                        <input matInput [(ngModel)] = 'loginData.password' name="password_L" required id="password_L" type="password" class="form-control" placeholder="Ingrese el password del Usuario">
+                        <mat-hint>El Password es requerido</mat-hint>
+                      </mat-form-field>
+
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button (click)="formSubmitL()" mat-raised-button type="button" class="btn btn-primary">Login</button>
+                  <button (click)="closeModalL()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Sigup -->
+          <div class="modal fase" id="signInModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Signup</h5>
+                  <button  (click)="closeModalS()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    
+                  <form class="loginform" (ngSubmit)="formSubmitS()" >
+                    
+                    <mat-form-field appearance="outline" class="form-group">
+                        <mat-label class="full-width" for="nombre_S">Nombre</mat-label>
+                        <input matInput [(ngModel)] = 'signInData.nombre' name="nombre_S" id="nombre_S" required type="text" class="form-control" placeholder="Ingrese el nombre del Usuario">
+                        <!-- <mat-hint>El Nombre es requerido</mat-hint> -->
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" class="form-group">
+                        <mat-label class="full-width" for="email_S">Email</mat-label>
+                        <input matInput [(ngModel)] = 'signInData.email' name="email_S" id="email_S" required type="email" class="form-control" placeholder="Ingrese el email del Usuario">
+                        <!-- <mat-hint>El Email es requerido</mat-hint> -->
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" class="form-group">
+                        <mat-label class="full-width" for="password_S">password</mat-label>
+                        <input matInput [(ngModel)] = 'signInData.password' name="password_S" required id="password_S" type="password" class="form-control" placeholder="Ingrese el password del Usuario">
+                        <!-- <mat-hint>El Password es requerido</mat-hint> -->
+                      </mat-form-field>
+
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button (click)="formSubmitS()" mat-raised-button type="button" class="btn btn-primary">Signup</button>
+                  <button (click)="closeModalS()" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>

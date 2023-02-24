@@ -1,0 +1,9 @@
+.loginform{
+    display: flex;
+    flex-direction: column;
+}
+
+.mysnack{
+    z-index: 2000;
+    background-color: white;
+}

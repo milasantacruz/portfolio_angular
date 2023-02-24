@@ -1,0 +1,74 @@
+<section class="laboral container-fluid p-md-4 p-0">
+    <div class="row my-pe p-4" >
+        <h1 class="col-10 laboralText mb-2 mb-md-4 text-md-start text-center">Experiencia Laboral</h1>
+        <i 
+        (click)="clickEdit()"
+        [ngStyle]="{'display':(isLogIn)?'block':'none'}" 
+        id="addProyecto" 
+        class="col-2 bi bi-pencil-square fa-4x"> 
+        Add Proyecto</i>
+    </div>
+    <div id="laboral" class="container-md pt-4 experiencia-laboral">
+        <form 
+        [ngStyle]="{'display':(addLabor)?'block':'none'}" 
+        id="formNewPro" 
+        class=" formProyecto border border-danger rounded bg-color-rose p-2 m-2">
+            <mat-form-field class="d-block form-group row">
+                <mat-label  for="nombre" class="full-width col-sm-2 col-form-label" >Nombre del Proyecto</mat-label>
+                <div class="col-sm-10">
+                     <input matInput required name="nombre" [(ngModel)]="addNewLabor.nombre" type="text" id="nombre"  placeholder="Nombre del proyecto" class="form-control">
+                </div>
+            </mat-form-field>
+            <mat-form-field class="d-block form-group row">
+                <mat-label  for="empresa" class="full-width col-sm-2 col-form-label" >Empresa</mat-label>
+                <div class="col-sm-10">
+                     <input matInput required name="empresa" [(ngModel)]="addNewLabor.empresa"t type="text" id="empresa"  placeholder="Empresa" class="form-control">
+                </div>
+            </mat-form-field>
+            <mat-form-field class="d-block form-group row">
+                <mat-label  for="cargo" class="full-width col-sm-2 col-form-label" >Puesto</mat-label>
+                <div class="col-sm-10">
+                    <input matInput required name="cargo" [(ngModel)]="addNewLabor.cargo" type="text" id="cargo"  placeholder="Cargo" class="form-control">
+                </div>
+            </mat-form-field>
+            <mat-form-field class="d-block form-group row">
+                <mat-label  for="inicio" class="full-width col-sm-2 col-form-label" >Inicio</mat-label>
+                <div class="col-sm-10">
+                    <input matInput required name="inicio" [(ngModel)]="addNewLabor.inicio" type="text" id="inicio"  placeholder="periodo" class="form-control">
+                </div>
+            </mat-form-field>
+            <mat-form-field class="d-block form-group row">
+                <mat-label  for="fin" class="full-width col-sm-2 col-form-label" >Fin</mat-label>
+                <div class="col-sm-10">
+                    <input matInput required name="fin" [(ngModel)]="addNewLabor.fin" type="text" id="fin"  placeholder="periodo" class="form-control">
+                </div>
+            </mat-form-field>
+            <mat-form-field class="d-block form-group row">
+                <mat-label  for="descripcion" class="full-width col-sm-2 col-form-label" >Descripcion</mat-label>
+                <div class="col-sm-10">
+                    <input matInput required name="descripcion" [(ngModel)]="addNewLabor.descripcion" type="text" id="descripcion"  placeholder="descripcion" class="form-control">
+                </div>
+            </mat-form-field>
+            <mat-form-field class="d-block form-group row">
+                <mat-label  for="imagen" class="full-width col-sm-2 col-form-label" >Imagen</mat-label>
+                <div class="col-sm-10">
+                    <input matInput required name="imagen" [(ngModel)]="addNewLabor.imagen"  id="imagen"  placeholder="Search" class="form-control">
+                </div>
+            </mat-form-field>
+            <img src="" id="newImgPrev" class="pt-4 img-thumbnail imgPrev" />
+            <div class="container" >
+                <button (click)="closeEdit()"  id="cancelarNewProyecto" class="btn bg-color-red m-2">cancelar</button>
+                <button (click)="editForm()"  id="confirmarNewProyecto" class="btn bg-color-red m-2">confirmar</button>
+            </div>
+    
+        </form>
+
+        <laboral-item
+            *ngFor="let laboralItem of dataProyectos"
+            [labor]="laboralItem"
+        ></laboral-item>
+
+
+
+    </div>
+</section>

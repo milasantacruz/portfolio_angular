@@ -1,0 +1,101 @@
+<div class="laboralItem row trabajo m-md-4 m-0 p-md-4 pt-4 pb-4">
+    <div class="col-md-3 col-12 pb-4">
+        <img [src]="labor.imagen" alt="" class="img-thumbnail ">
+    </div>
+    <div class="col-12 col-md-9 p-0">
+        <div class="container-fluid row proyecto p-0">
+            <div class="p-0 col-6 d-flex justify-content-center strong">Proyecto:</div>
+            <div class="p-0 col-6">{{labor.nombre}}</div>
+        </div>
+        <div class="container-fluid row empresa p-0">
+            <div class="p-0 col-6 d-flex justify-content-center strong">Empresa:</div>
+            <div class="p-0 col-6">{{labor.addCliente[0].nombre}}</div>
+        </div>
+        <div class="container-fluid row titulo p-0">
+            <div class="p-0 col-6 d-flex justify-content-center strong">Puesto:</div>
+            <div class="p-0 col-6">{{labor.cargo}}</div>
+        </div>
+        <div class="container-fluid row titulo p-0">
+            <div class="p-0 col-6 d-flex justify-content-center strong">Inicio:</div>
+            <div class="col-6">{{labor.inicio}}</div>
+        </div>
+        <div class="container-fluid row titulo p-0">
+            <div class="p-0 col-6 d-flex justify-content-center strong">Finalizacion:</div>
+            <div class="col-6">{{labor.fin}}</div>
+        </div>
+        <div class="container-fluid row titulo p-0">
+            <div class="p-0 col-6 d-flex justify-content-center strong">Descripcion:</div>
+            <div class="p-0 col-6">{{labor.descripcion}}</div>
+        </div>
+    </div>
+    <div 
+    (click)="clickEdit()"
+    [ngStyle]="{'display':(isLogIn)?'block':'none'}" 
+    class="my-pe p-4" id="editarTrabajo">
+        <i class="bi bi-pencil-square fa-4x"></i>
+    </div>
+</div>
+
+<!-- FORM -->
+
+<form  
+[ngStyle]="{'display':(editLabor)?'block':'none'}"
+id="editLabor" 
+class=" formProyecto border border-danger rounded bg-color-rose p-2 m-2">
+    <mat-form-field class="d-block form-group row">
+        <mat-label for="proyectoNew" class="full-width col-sm-2 col-form-label" >Nombre</mat-label>
+        <div class="col-sm-10">
+            <input matInput required [(ngModel)]="editedLabor.nombre" name="proyectoNew" type="text" id="proyectoNew"  placeholder="proyecto" class="form-control">
+        </div>
+    </mat-form-field>
+    <mat-form-field class="d-block form-group row">
+        <mat-label for="empresaNew" class="full-width col-sm-2 col-form-label" >Empresa</mat-label>
+        <div class="col-sm-10">
+             <input matInput required [(ngModel)]="editedLabor.addCliente[0].nombre" name="empresaNew" type="text" id="empresaNew"  placeholder="Empresa" class="form-control">
+        </div>
+    </mat-form-field>
+    <mat-form-field class="d-block form-group row">
+        <mat-label for="puestoNew" class="full-width col-sm-2 col-form-label" >Puesto</mat-label>
+        <div class="col-sm-10">
+            <input matInput required [(ngModel)]="editedLabor.cargo" name="puestoNew" type="text" id="puestoNew"  placeholder="Puesto" class="form-control">
+        </div>
+    </mat-form-field>
+    <mat-form-field class="d-block form-group row">
+        <mat-label for="inicioNew" class="full-width col-sm-2 col-form-label" >Inicio</mat-label>
+        <div class="col-sm-10">
+            <input matInput required [(ngModel)]="editedLabor.inicio" name="inicioNew" type="text" id="inicioNew"  placeholder="inicio" class="form-control">
+        </div>
+    </mat-form-field>
+    <mat-form-field class="d-block form-group row">
+        <mat-label for="finNew" class="full-width col-sm-2 col-form-label" >Fin</mat-label>
+        <div class="col-sm-10">
+            <input matInput required [(ngModel)]="editedLabor.fin" name="finNew" type="text" id="finNew"  placeholder="fin" class="form-control">
+        </div>
+    </mat-form-field>
+    <mat-form-field class="d-block form-group row">
+        <mat-label for="descripcionNew" class="full-width col-sm-2 col-form-label" >Descripcion</mat-label>
+        <div class="col-sm-10">
+            <input matInput required [(ngModel)]="editedLabor.descripcion" name="descripcionNew" type="text" id="descripcionNew"  placeholder="descripcion" class="form-control">
+        </div>
+    </mat-form-field>
+    <mat-form-field class="d-block form-group row">
+        <mat-label for="imagenNew" class="full-width col-sm-2 col-form-label" >Imagen</mat-label>
+        <div class="col-sm-10">
+            <input matInput required [(ngModel)]="editedLabor.imagen" name="imagenNew" id="imagenNew"  placeholder="Search" class="form-control">
+        </div>
+    </mat-form-field>
+    <img src="" id="newImgPrev" class="pt-4 img-thumbnail imgPrev" />
+    <div class="container" >
+    <button
+    (click)="closeEdit()" 
+    id="cancelarNewProyecto" 
+    class="btn bg-color-red m-2">
+    cancelar</button>
+    <button 
+    (click)="editForm()"
+    id="confirmarNewProyecto" 
+    class="btn bg-color-red m-2">
+    confirmar</button>
+    </div>
+
+</form>

@@ -1,0 +1,77 @@
+
+        <section id="educacion" class="educacion container-fluid p-md-4 p-0">
+            <div class="row p-4">
+                <h1 class="col-10  eduText text-md-start text-center">Educacion</h1>
+                <i 
+                (click)="clickEdit()"
+                [ngStyle]="{'display':(isLogIn)?'block':'none'}" 
+                id="addEducacion" 
+                class="col-2 bi bi-pencil-square fa-4x my-pe"> Add Educacion</i>
+           </div>
+             <div class="container-md pt-4">
+                <form  
+                [ngStyle]="{'display':(addEdu)?'block':'none'}"
+                id="addformEducacion" 
+                class="addformEducacion  
+                border border-danger rounded bg-color-rose p-2 m-2">
+                      <mat-form-field class="d-block form-group row">
+                           <mat-label  for="eduinstitucion" class="full-width col-sm-2 col-form-label" >Nombre de la Institucion</mat-label>
+                          <div class="col-sm-10">
+                               <input matInput required name="eduinstitucion" [(ngModel)]="newEducacion.institucion" type="text" id="eduinstitucion"  placeholder="Institucion" class="form-control">
+                          </div>
+                      </mat-form-field>
+                      <mat-form-field class="d-block form-group row">
+                           <mat-label  for="edutitulo" class="full-width col-sm-2 col-form-label" >Titulo</mat-label>
+                          <div class="col-sm-10">
+                              <input matInput required name="edutitulo" [(ngModel)]="newEducacion.titulo" type="text" id="edutitulo"  placeholder="titulo" class="form-control">
+                          </div>
+                      </mat-form-field>
+                      <mat-form-field class="d-block form-group row">
+                           <mat-label  for="edudescripcion" class="full-width col-sm-2 col-form-label" >Descripcion</mat-label>
+                          <div class="col-sm-10">
+                              <input matInput required name="edudescripcion" [(ngModel)]="newEducacion.descripcion" type="text" id="edudescripcion"  placeholder="Descripcion" class="form-control">
+                          </div>
+                      </mat-form-field>
+                      <mat-form-field class="d-block form-group row">
+                           <mat-label  for="eduimagen" class="full-width col-sm-2 col-form-label" >Imagen</mat-label>
+                          <div class="col-sm-10">
+                              <input matInput required name="eduimagen" [(ngModel)]="newEducacion.imagen" type="text" id="eduimagen"  placeholder="Imagen" class="form-control">
+                          </div>
+                      </mat-form-field>
+                      <mat-form-field class="d-block form-group row">
+                           <mat-label  for="eduinicio" class="full-width col-sm-2 col-form-label" >Inicio</mat-label>
+                          <div class="col-sm-10">
+                              <input matInput required name="eduinicio" [(ngModel)]="newEducacion.inicio" type="text" id="eduinicio"  placeholder="Inicio" class="form-control">
+                          </div>
+                      </mat-form-field>
+                      <mat-form-field class="d-block form-group row">
+                           <mat-label  for="edufin" class="full-width col-sm-2 col-form-label" >Fin</mat-label>
+                          <div class="col-sm-10">
+                              <input matInput required name="edufin" [(ngModel)]="newEducacion.fin" type="text" id="edufin"  placeholder="Fin" class="form-control">
+                          </div>
+                      </mat-form-field>
+                      <img src="" id="eduNewImgPrev" class="pt-4 img-thumbnail imgPrev" />
+                      <div class="container" >
+                          <button 
+                          (click)="closeEdit()"
+                          id="cancelarAddEdu" 
+                          class="btn bg-color-red m-2">
+                          cancelar
+                          </button>
+                          <button 
+                          (click)="editForm()"
+                          id="confirmarAddEdu" 
+                          class="btn bg-color-red m-2">confirmar
+                          </button>
+                      </div>
+              
+                </form>
+             </div>
+
+           <educacion-item
+                *ngFor="let educacionItem of dataEducacion"
+                [educacion]="educacionItem"
+           ></educacion-item>
+
+        </section>
+
