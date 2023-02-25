@@ -1,2 +1,2 @@
-let baseUrl = 'http://localhost:8181'
+let baseUrl = 'https://molecular-lanni-milasantacruz.koyeb.app'
 export default baseUrl;
